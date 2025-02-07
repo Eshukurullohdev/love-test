@@ -1,22 +1,41 @@
-let bars = document.querySelector(".fa-bars");
-let x = document.querySelector(".menu button");
-let menu = document.querySelector(".menu");
-let sun = document.querySelector(".fa-sun");
-let moon = document.querySelector(".fa-moon");
-bars.addEventListener('click', function() {
-   menu.style.cssText = "transform: translateX(0); transition: all 0.5s ease;);";
-})
-x.addEventListener('click', function()  {
-    menu.style.cssText = "transform: translateX(-300px); transition: all 0.5s ease;";
+// ClassList 
+//Methods
+// Toggle -- ham qoshadi ham olib tashledi
+// Add -- qoshish
+// Remove -- ayrish
+// function()  -- ()=>
+// let btn = document.querySelector('.btn');
+// let ayrish = document.querySelector('.ayrish');
+
+// btn.addEventListener('click',()=> {
+//     document.body.classList.add('active');
+// });
+
+// ayrish.addEventListener('click', ()=> {
+//     document.body.classList.remove('active')
+// });
+
+
+// function Velisipet() {
+//     document.body.classList.add('active');
+// }
+
+// function ayrishFunc() {
+//     document.body.classList.remove('active');
+// }
+
+let div = document.querySelector('.malumotnoma');
+let btn = document.querySelector('.btn');
+let btn2 = document.querySelector('.btn2');
+
+btn.addEventListener('click', ()=> {
+      div.classList.add('active')
+      btn2.style.cssText = 'display: block';    
+      btn.style.cssText = 'display: none'; 
 })
 
-moon.addEventListener('click', function()  {
-    document.body.style.cssText = "background-color: rgb(15, 14, 14); color: white; transition: all 0.5s ease;"
-    moon.style.cssText = " transform: scale(1.5); transition: all 0.5s ease;";
-    sun.style.cssText = "color: yellow; transition: all 0.5s ease;";
-})
-sun.addEventListener('click', function()  {
-    document.body.style.cssText = "background-color: white; transition: all 0.5s ease;";
-    sun.style.cssText = "transform: scale(1.5); transition: all 0.5s ease;";
-})
-
+btn2.addEventListener('click',()=> {
+    div.classList.remove('active')
+    btn.style.cssText = 'display: block';
+    btn2.style.cssText = 'display: none';
+} )

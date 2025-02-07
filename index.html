@@ -5,48 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
-
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+    }
+  .malumotnoma {
+    width: 300px;
+    height: 300px;
+    background-color: aquamarine;
+    text-align: center;
+    padding: 20px;
+    font-family: sans-serif;
+    border-radius: 10px;
+    user-select: none;
+  }
+  .btn {
+    margin-top: 120px;
+    padding: 5px 40px;
+    transition: 0.5s;
+    border: none;
+  }
+  .btn:active {
+    background-color: red;
+    transform: scale(0.9);
+  }
+  .btn2 {
+    margin-top: 40px;
+    padding: 5px 40px;
+    transition: 0.5s;
+    display: none;
+    border: none;
+  }
+  .btn2:active {
+    background-color: red;
+    transform: scale(0.9);
+  }
+  .active {
+    display: none;
+  }
+</style>
 <body>
-    <nav>
-        <i class="fa fa-bars"></i>
-
-        <div class="sun">
-            <i class="fa-regular fa-moon"></i>
-            <i class="fa-regular fa-sun"></i>
-        </div>
-
-
-
-    </nav>
-
-    <div class="menu">
-        <button>X</button>
+    
+    <div class="malumotnoma">
+        <h1>Mening Malumotlarim</h1>
+        <p>My name is Mister X</p>
+        <p>My age is 18 years old</p>
+        <p>My city is Tashkent</p>
     </div>
-    <div class="container wrapper">
-        <div class="left"></div>
-        <div class="right">
-            <div class="right-top">
-                <h6>mission and vision</h6>
-                <h1>About Me</h1>
-            </div>
-            <div class="p-uchun">
-
-                <p class="right-bottom-p-1">
-                    mission and vision
-                    About Me
-                    Dictum sit amet justo donec enim diam vulputate. Sociis natoque penatibus et magnis dis parturient.
-                </p>
-
-                <p class="right-bottom-p-2">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt.</p>
-
-            </div>
-        </div>
-    </div>
+    <button class="btn">Off</button>
+    <button class="btn2">On</button>
 
     <script src="/main.js"></script>
 </body>
