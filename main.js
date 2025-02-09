@@ -1,38 +1,37 @@
-// ClassList 
-//Methods
-// Toggle -- ham qoshadi ham olib tashledi
-// Add -- qoshish
-// Remove -- ayrish
-// function()  -- ()=>
-// let btn = document.querySelector('.btn');
-// let ayrish = document.querySelector('.ayrish');
+// filter
+// arrow funksiya -- =>
+//function()
+// ()=>
 
-// btn.addEventListener('click',()=> {
-//     document.body.classList.add('active');
-// });
+// let sonlar = [1,2,3,4,5,6,7,8,9,10];
 
-// ayrish.addEventListener('click', ()=> {
-//     document.body.classList.remove('active')
-// });
+// let filterlash = sonlar.filter(tesha => tesha % 3 == 0);
+// console.log(filterlash);
+
+// let filterOndanKatta = sonlar.filter(bolta => bolta > 5);
+// console.log(filterOndanKatta);
 
 
-// function Velisipet() {
-//     document.body.classList.add('active');
-// }
+// let ismlar = ["Ilyosbek", "Marjona", "Muhamadali", "Abdulatif", "Bekzodbek", "Azamat", "Po'lat"];
 
-// function ayrishFunc() {
-//     document.body.classList.remove('active');
-// }
+// // let filterlash = ismlar.filter(isim => isim.length > 8);
+// // console.log(filterlash);
+
+// let BoshlFilter =ismlar.filter(pepsi => pepsi.charAt(0) == "P");
+// console.log(BoshlFilter);
+
+// //male - erkak
+// //female - ayol
+// let users = [
+//     { name: "Shukurulloh", age: 18, gender: "male", yili: '2007-11-22'},
+//     {name: "Azamat", age: 29, gender: "male", yili: '2002-11-22'},
+//     {name: "Sug'diyone", age:21, gender: "female", yili: '2004-11-22'},
+// ]
 
 
-let btn = document.querySelector('.btn')
-let xmark = document.querySelector('.xmark')
-let menu = document.querySelector('.menu')
+// let FilterYili = users.filter(yil => new Date(yil.yili) > new Date('2007-01-01'));
+// console.log(FilterYili);
 
-btn.addEventListener('click', ()=> {
-    menu.style.cssText = 'transform: translateX(0); transition: 1s;'
-})
 
-xmark.addEventListener('click', ()=> {
-    menu.style.cssText = 'transform: translateX(-300px); transition: 1s;'
-})
+
+
