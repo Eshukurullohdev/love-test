@@ -24,18 +24,15 @@
 //     document.body.classList.remove('active');
 // }
 
-let div = document.querySelector('.malumotnoma');
-let btn = document.querySelector('.btn');
-let btn2 = document.querySelector('.btn2');
+
+let btn = document.querySelector('.btn')
+let xmark = document.querySelector('.xmark')
+let menu = document.querySelector('.menu')
 
 btn.addEventListener('click', ()=> {
-      div.classList.add('active')
-      btn2.style.cssText = 'display: block';    
-      btn.style.cssText = 'display: none'; 
+    menu.style.cssText = 'transform: translateX(0); transition: 1s;'
 })
 
-btn2.addEventListener('click',()=> {
-    div.classList.remove('active')
-    btn.style.cssText = 'display: block';
-    btn2.style.cssText = 'display: none';
-} )
+xmark.addEventListener('click', ()=> {
+    menu.style.cssText = 'transform: translateX(-300px); transition: 1s;'
+})
