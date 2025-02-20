@@ -52,18 +52,40 @@
 // yangiDiv.style.height = '100px';
 // yangiDiv.style.backgroundColor = 'red';
 
-let btn =  document.querySelector('.btn');
+// let btn =  document.querySelector('.btn');
+// let xmark = document.querySelector('.xmark');   
+
+// btn.addEventListener('click', function() {
+//     let yangiDiv = document.createElement('div');
+//     document.body.appendChild(yangiDiv);
+//     yangiDiv.style.width = '100px';
+//     yangiDiv.style.height = '100px';
+//     yangiDiv.style.backgroundColor = 'red';
+//     yangiDiv.style.borderRadius = '50%';
+// });
+
+// xmark.addEventListener('click', function() {
+//     let lastDiv = document.querySelector('div');
+//     document.body.removeChild(lastDiv);
+// });
+
+// let btn = document.querySelector('.btn');
+// //SetTimeout --- siz aytgan vaqtda ishlaydi
+// //SetInterval --- u tohtovsiz ishlab ketoradi
+// //ClearInterval -- Timeoutni tozalab tashlaydi
+
+// // setTimeout(()=>  {
+// //     console.log('Hello');
+// // }, 3000)
 
 
-btn.addEventListener('click', function() {
-    let yangiDiv = document.createElement('div');
-    document.body.appendChild(yangiDiv);
-    yangiDiv.style.width = '100px';
-    yangiDiv.style.height = '100px';
-    yangiDiv.style.backgroundColor = 'red';
-    yangiDiv.style.borderRadius = '50%';
-})
+// // function bosdim() {
+// //     setTimeout(()=> {
+// //         console.log('salom'); 
+// //     }, 2000);
+// // }
 
-
-// Math.floor -- Random
+// setInterval(()=> {
+//     console.log('salom');
+// }, 2000)
 
