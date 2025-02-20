@@ -24,7 +24,6 @@
 
 // document.body.addEventListener('keydown', (e) => {
 //     if (e.key === 'h') {
-        
 //             let color = '#';
 //             for (let i = 0; i < 6; i++) {
 //                 let random = Math.floor(Math.random() * hexColur.length);
@@ -38,6 +37,16 @@
 //             yangiDiv.style.backgroundColor = color;
 //     }
 // });
-// })
+// });
 
+// Client X, Y.
+
+let box = document.querySelector('.box');
+
+document.addEventListener('mousemove', (e) => {
+    let x = e.clientX;
+    let y = e.clientY;
+    box.style.left = x + 10 + 'px';
+    box.style.top = y + 10 +'px'
+})
 
