@@ -89,3 +89,26 @@
 //     console.log('salom');
 // }, 2000)
 
+
+// let sanash = 0;
+
+// let interval = setInterval(()=> {
+//     console.log("Ishlamoqda...."); 
+//     sanash++;
+//     if (sanash == 5) {
+//         clearInterval(interval);
+//         console.log("Tohtadi!");
+//     }
+// }, 1000);
+
+
+let vaqt = 10;
+
+let times = setInterval(()=> {
+    console.log(vaqt);
+    vaqt--;
+    if (vaqt === 0) {
+        clearInterval(times);
+        console.log('Finish');
+    }
+}, 2000)
