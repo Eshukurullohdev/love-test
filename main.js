@@ -35,18 +35,35 @@
 //             yangiDiv.style.left = e.clientX + 'px';
 //             yangiDiv.style.top = e.clientY + 'px';
 //             yangiDiv.style.backgroundColor = color;
-//     }
+//     };
 // });
 // });
 
 // Client X, Y.
 
-let box = document.querySelector('.box');
 
-document.addEventListener('mousemove', (e) => {
-    let x = e.clientX;
-    let y = e.clientY;
-    box.style.left = x + 10 + 'px';
-    box.style.top = y + 10 +'px'
+
+// Javascriptda Elementlar yaratish.
+//Apendchild -- Ozini ichiga bola qilib oladi
+
+// let yangiDiv = document.createElement('div');
+// document.body.appendChild(yangiDiv);
+// yangiDiv.style.width = '100px';
+// yangiDiv.style.height = '100px';
+// yangiDiv.style.backgroundColor = 'red';
+
+let btn =  document.querySelector('.btn');
+
+
+btn.addEventListener('click', function() {
+    let yangiDiv = document.createElement('div');
+    document.body.appendChild(yangiDiv);
+    yangiDiv.style.width = '100px';
+    yangiDiv.style.height = '100px';
+    yangiDiv.style.backgroundColor = 'red';
+    yangiDiv.style.borderRadius = '50%';
 })
+
+
+// Math.floor -- Random
 
