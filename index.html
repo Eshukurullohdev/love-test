@@ -6,18 +6,21 @@
   <title>Client</title>
 </head>
 <style>
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    gap: 10px;
+  .menu {
+    width: 300px;
+    height: 300px;
+    background-color: yellow;
+    transition: 1s ease;
+  }
+  .active {
+    transform: translateX(-310px);
+    transition: 1s ease;
   }
 </style>
 <body>
 
-  <button class="btn">start</button>
-  <button>Stop</button>
+  <div class="menu"></div>
+  <button class="btn">Stop</button>
  
   <script src="/main.js"></script>
 </body>

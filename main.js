@@ -102,13 +102,9 @@
 // }, 1000);
 
 
-let vaqt = 10;
+let btn =  document.querySelector('.btn');
+let menu = document.querySelector('.menu')
 
-let times = setInterval(()=> {
-    console.log(vaqt);
-    vaqt--;
-    if (vaqt === 0) {
-        clearInterval(times);
-        console.log('Finish');
-    }
-}, 2000)
+btn.addEventListener('click', ()=> {
+    menu.classList.toggle('active')
+})
