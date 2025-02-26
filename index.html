@@ -1,27 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Client</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        .carousel {
+            position: relative;
+            width: 600px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel img {
+            width: 600px;
+        }
+        .btn {
+            position: absolute;
+            top: 50%;
+            background-color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+    </style>
 </head>
-<style>
-  .menu {
-    width: 300px;
-    height: 300px;
-    background-color: yellow;
-    transition: 1s ease;
-  }
-  .active {
-    transform: translateX(-310px);
-    transition: 1s ease;
-  }
-</style>
 <body>
+    <div class="carousel">
+        <div class="carousel-container">
+            <img src="photo_2024-08-22_10-21-22.jpg">
+            <img src="photo_2024-08-22_10-21-22.jpg">
+            <img src="photo_2024-08-22_10-21-22.jpg">
+        </div>
+        <button class="btn prev"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="btn next"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
 
-  <div class="menu"></div>
-  <button class="btn">Stop</button>
-  <img src="suna188dh.png" alt="">
-  <script src="/main.js"></script>
+    <script>
+        const container = document.querySelector('.carousel-container');
+        const images = document.querySelectorAll('.carousel img');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            container.style.transform = `translateX(-${currentIndex * 600}px)`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            if (currentIndex === 0) {
+                currentIndex = images.length - 1;
+            } else {
+                currentIndex -= 1;
+            }
+            updateCarousel();
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (currentIndex === images.length - 1) {
+                currentIndex = 0;
+            } else {
+                currentIndex += 1;
+            }
+            updateCarousel();
+        });
+    </script>
 </body>
 </html>
