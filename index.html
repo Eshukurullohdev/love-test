@@ -62,42 +62,6 @@
         <button class="btn prev"><i class="fa-solid fa-arrow-left"></i></button>
         <button class="btn next"><i class="fa-solid fa-arrow-right"></i></button>
     </div> -->
-    <div class="carusel">
-        <div class="carusel-container">
-            <img src="pexels-francesco-ungaro-2325447 (1).jpg" alt="">
-            <img src="pexels-pixabay-158063.jpg" alt="">
-            <img src="pexels-singkham-178541-1108572.jpg" alt="">
-            <img src="pexels-singkham-178541-1108572.jpg" alt="">
-            <img src="pexels-singkham-178541-1108572.jpg" alt="">
-            <img src="pexels-singkham-178541-1108572.jpg" alt="">
-        </div>
-        <button class="btn prev"><i class="fa-solid fa-arrow-left"></i></button>
-        <button class="btn next"><i class="fa-solid fa-arrow-right"></i></button>
-    </div>
-    <script>
-        const caruselContainer = document.querySelector('.carusel-container');
-        const left = document.querySelector('.prev');
-        const right = document.querySelector('.next');
-        let hozirgiQiymat = 0;
-        const images = [
-            'pexels-singkham-178541-1108572.jpg',
-            'pexels-pixabay-158063.jpg',
-            'pexels-francesco-ungaro-2325447 (1).jpg'
-        ];
-        right.addEventListener('click', () => {
-            hozirgiQiymat++;
-            if (hozirgiQiymat >= images.length) {
-                hozirgiQiymat = 0;
-            }
-            caruselContainer.style.transform = `translateX(-${hozirgiQiymat * 600}px)`;
-        });
-        left.addEventListener('click', ()=> {
-            hozirgiQiymat--;
-            if (hozirgiQiymat < 0) {
-                hozirgiQiymat = images.length - 1;
-            }
-            caruselContainer.style.transform = `translateX(-${hozirgiQiymat * 600}px)`;
-        })
-    </script>
+    <script src="/main.js"></script>
 </body>
 </html>
