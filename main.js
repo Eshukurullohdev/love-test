@@ -160,54 +160,54 @@
 // console.log(Math.floor(32.8));
 // console.log(Math.floor(50.1));
 
-function salim() {
-        return Math.floor(Math.random() * 10 + 1)
-    }
-    console.log(salim());
+// function salim() {
+//         return Math.floor(Math.random() * 10 + 1)
+//     }
+//     console.log(salim());
     
-function rolls(r) {
-        let index = Math.floor(Math.random() * r.length);
-        return r[index];
-    }
+// function rolls(r) {
+//         let index = Math.floor(Math.random() * r.length);
+//         return r[index];
+//     }
 
-let fruits = [
-    'Nok', 'olma', 'olcha', 'tut'
-];
+// let fruits = [
+//     'Nok', 'olma', 'olcha', 'tut'
+// ];
 
 
-function meva(x) {
-    let index = Math.floor(Math.random() * x.length);
-    return x[index];
-}
+// function meva(x) {
+//     let index = Math.floor(Math.random() * x.length);
+//     return x[index];
+// }
 
-// btn.addEventListener('click', function() {
-//     console.log(meva(fruits));
+// // btn.addEventListener('click', function() {
+// //     console.log(meva(fruits));
+// // })
+
+// let btn =  document.querySelector('.btn')
+// let hexColur = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+// function getRandom() {
+//     let color = '#'
+//     for(let x = 0; x < 6; x++) {
+//         let random = Math.floor(Math.random() * hexColur.length);
+//         color += hexColur[random];
+//     }
+//     return color
+// }
+// btn.addEventListener('click', ()=> {
+//     document.body.style.backgroundColor = getRandom();
 // })
 
-let btn =  document.querySelector('.btn')
-let hexColur = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
-function getRandom() {
-    let color = '#'
-    for(let x = 0; x < 6; x++) {
-        let random = Math.floor(Math.random() * hexColur.length);
-        color += hexColur[random];
-    }
-    return color
-}
-btn.addEventListener('click', ()=> {
-    document.body.style.backgroundColor = getRandom();
-})
 
+// function getRandom() {
+//     let r = Math.floor(Math.random() * 256)
+//     let g = Math.floor(Math.random() * 256)
+//     let b = Math.floor(Math.random() * 256)
+//     return `rgb(${r},${g},${b})`
+// }
 
-function getRandom() {
-    let r = Math.floor(Math.random() * 256)
-    let g = Math.floor(Math.random() * 256)
-    let b = Math.floor(Math.random() * 256)
-    return `rgb(${r},${g},${b})`
-}
-
-btn.addEventListener('click', () => {
-    document.body.style.transition = '1s'
-    document.body.style.backgroundColor = getRandom()
-    console.log(getRandom());
-})
+// btn.addEventListener('click', () => {
+//     document.body.style.transition = '1s'
+//     document.body.style.backgroundColor = getRandom()
+//     console.log(getRandom());
+// })
