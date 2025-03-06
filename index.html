@@ -7,15 +7,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <style>
-    .btn {
-        color: #df1543;
-        background-color: rgb(red, green, blue);
+    #progressBar {
+        width: 60%;
+        -webkit-appearance: none;
+        background: #444;
+        height: 5px;
+        border-radius: 5px;
+        outline: none;
+    }
+  
+    #progressBar::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background: red;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+  
+    #progressBar::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background: red;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        cursor: pointer;
     }
 </style>
 <body>
 
-  <button class="btn">click</button>
- 
+    <div class="wrapper">
+
+        <video id="MyVideo" width="60%" height="100%">
+          <source src="3571264-uhd_3840_2160_30fps.mp4" type="video/mp4">
+        </video>
+        <button id="toggleButton">Pause Play</button>
+        <button id="toliqEkran">full</button>
+        <button id="volumeUp">🔊</button>
+        <button id="volumeDown">🔉</button>
+        <input type="range" id="progressBar" value="0" min="0" step="0.1">
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <span id="currentTime">00:00</span>
+        <span id="duration">00:00</span>
+      </div>
     <script src="/main.js"></script>
 </body>
 
