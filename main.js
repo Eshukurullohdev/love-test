@@ -274,7 +274,47 @@ let chap = document.querySelector('.fa-backward')
 let full = document.querySelector('.fa-expand')
 let minute = document.querySelector('.minut')
 let second = document.querySelector('.second')
+let progressBar = document.getElementById("progressBar");
+let currentTimeDisplay = document.getElementById("currentTime");
+let durationDisplay = document.getElementById("duration");
+let isDragging = false; // Foydalanuvchi slayderni ushlab turganini aniqlash
 
+// Funksiya: soniyalarni "MM:SS" formatiga o‘girish
+function formatTime(seconds) {
+    let min = Math.floor(seconds / 60);
+    let sec = Math.floor(seconds % 60);
+    return (min < 10 ? "0" : "") + min + ":" + (sec < 10 ? "0" : "") + sec;
+}
+
+// Videoni yuklash - maksimal vaqtni o‘rnatish
+video.addEventListener("loadedmetadata", function () {
+    progressBar.max = video.duration;
+    durationDisplay.textContent = formatTime(video.duration);
+});
+
+// Video o‘ynaganda vaqt va progress barni yangilash
+video.addEventListener("timeupdate", function () {
+    if (!isDragging) { // Faqat foydalanuvchi slayderni ushlab turmasa yangilash
+        progressBar.value = video.currentTime;
+        currentTimeDisplay.textContent = formatTime(video.currentTime);
+    }
+});
+
+// Foydalanuvchi slayderni ushlaganda yangilashni to‘xtatish
+progressBar.addEventListener("mousedown", function () {
+    isDragging = true;
+});
+
+// Slayderni harakatlantirganda vaqtni real vaqtda o‘zgartirish
+progressBar.addEventListener("input", function () {
+    currentTimeDisplay.textContent = formatTime(progressBar.value);
+});
+
+// Foydalanuvchi slayderni qo‘yib yuborganda videoni yangi vaqtda boshlash
+progressBar.addEventListener("mouseup", function () {
+    isDragging = false;
+    video.currentTime = progressBar.value;
+});
 console.log(ong);
 
 play.addEventListener('click', function() {
