@@ -211,57 +211,109 @@
 //     document.body.style.backgroundColor = getRandom()
 //     console.log(getRandom());
 // })
-let full = document.getElementById('toliqEkran');
-let volumeUp = document.getElementById('volumeUp');
-let volumeDown = document.getElementById('volumeDown');
-let progressBar = document.getElementById("progressBar");
-let currentTimeDisplay = document.getElementById("currentTime");
-let durationDisplay = document.getElementById("duration");
-let isDraging = false;
-function formatTime(seconds) {
-    let min = Math.floor(seconds / 60)
-    let sec = Math.floor(seconds % 60)
-    return ( min < 10 ? '0' + min : min) + ':' + (sec < 10 ? '0' + sec : sec)
-}
-document.getElementById('toggleButton').addEventListener('click', () => {
-    let vide = document.getElementById('MyVideo');
-    if (vide.paused) {
-        vide.play();
-    }else {
-        vide.pause()
-    }
-    vide.addEventListener('dblclick', function() {
-        vide.currentTime += 5;
-    })
-    full.addEventListener('click', () => {
-        vide.requestFullscreen();
-    })
-    volumeDown.addEventListener('click', () => {
-        vide.volume -= 0.1;
-    })
-    volumeUp.addEventListener('click', () => {
-        vide.volume += 0.1;
-    })
-    vide.addEventListener('loadedmetadata', () => {
-        progressBar.max = vide.duration
-        durationDisplay.textContent = formatTime(vide.duration)
-    });
-    vide.addEventListener('timeupdate', () => {
-        progressBar.value = vide.currentTime
-        currentTimeDisplay.textContent = formatTime(vide.currentTime)
-    });
-    vide.addEventListener('input', function() {
-        vide.currentTime = progressBar.value
-    })
-    progressBar.addEventListener('mousedown', function() {
-        isDraging = true
-    })
-    progressBar.addEventListener('input', function() {
-        currentTimeDisplay.textContent = formatTime(progressBar.value)
-    })
-    progressBar.addEventListener('mouseup', function() {
-        isDraging = false
-        vide.currentTime = progressBar.value
-    } )
+// let full = document.getElementById('toliqEkran');
+// let volumeUp = document.getElementById('volumeUp');
+// let volumeDown = document.getElementById('volumeDown');
+// let progressBar = document.getElementById("progressBar");
+// let currentTimeDisplay = document.getElementById("currentTime");
+// let durationDisplay = document.getElementById("duration");
+// let isDraging = false;
+// function formatTime(seconds) {
+//     let min = Math.floor(seconds / 60)
+//     let sec = Math.floor(seconds % 60)
+//     return ( min < 10 ? '0' + min : min) + ':' + (sec < 10 ? '0' + sec : sec)
+// }
+// document.getElementById('toggleButton').addEventListener('click', () => {
+//     let vide = document.getElementById('MyVideo');
+//     if (vide.paused) {
+//         vide.play();
+//     }else {
+//         vide.pause()
+//     }
+//     vide.addEventListener('dblclick', function() {
+//         vide.currentTime += 5;
+//     })
+//     full.addEventListener('click', () => {
+//         vide.requestFullscreen();
+//     })
+//     volumeDown.addEventListener('click', () => {
+//         vide.volume -= 0.1;
+//     })
+//     volumeUp.addEventListener('click', () => {
+//         vide.volume += 0.1;
+//     })
+//     vide.addEventListener('loadedmetadata', () => {
+//         progressBar.max = vide.duration
+//         durationDisplay.textContent = formatTime(vide.duration)
+//     });
+//     vide.addEventListener('timeupdate', () => {
+//         progressBar.value = vide.currentTime
+//         currentTimeDisplay.textContent = formatTime(vide.currentTime)
+//     });
+//     vide.addEventListener('input', function() {
+//         vide.currentTime = progressBar.value
+//     })
+//     progressBar.addEventListener('mousedown', function() {
+//         isDraging = true
+//     })
+//     progressBar.addEventListener('input', function() {
+//         currentTimeDisplay.textContent = formatTime(progressBar.value)
+//     })
+//     progressBar.addEventListener('mouseup', function() {
+//         isDraging = false
+//         vide.currentTime = progressBar.value
+//     } )
 
-}) 
+// }) 
+
+let play = document.querySelector('.fa-play')
+let pause = document.querySelector('.fa-pause')
+let video =  document.getElementById('video')
+let ong = document.querySelector('.fa-forward')
+let chap = document.querySelector('.fa-backward')
+let full = document.querySelector('.fa-expand')
+let minute = document.querySelector('.minut')
+let second = document.querySelector('.second')
+
+console.log(ong);
+
+play.addEventListener('click', function() {
+    video.play()
+    play.style.display = 'none'
+    pause.style.display = 'block'
+});
+pause.addEventListener('click', function() {
+    video.pause()
+    play.style.display = 'block'
+    pause.style.display = 'none'
+})
+
+ong.addEventListener('dblclick', function() {
+    video.currentTime += 5
+})
+
+chap.addEventListener('dblclick', function() {
+    video.currentTime -= 5;
+})
+
+full.addEventListener('click', function() {
+    video.requestFullscreen();
+})
+
+document.body.addEventListener('keydown', function(s) {
+    if (s.key === 'f') {
+        video.requestFullscreen()
+    }
+})
+
+document.body.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowRight') {
+        video.currentTime += 5
+    }
+    else if (event.key === 'ArrowLeft') {
+        video.currentTime -= 5
+    }
+})
+video.addEventListener('dblclick', ()=> {
+    video.requestFullscreen();
+})
