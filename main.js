@@ -266,17 +266,20 @@
 
 // }) 
 
-let play = document.querySelector('.fa-play')
-let pause = document.querySelector('.fa-pause')
-let video =  document.getElementById('video')
-let ong = document.querySelector('.fa-forward')
-let chap = document.querySelector('.fa-backward')
-let full = document.querySelector('.fa-expand')
-let minute = document.querySelector('.minut')
-let second = document.querySelector('.second')
-
-console.log(ong);
-
+let play = document.querySelector('.fa-play');
+let pause = document.querySelector('.fa-pause');
+let video =  document.getElementById('video');
+let ong = document.querySelector('.fa-forward');
+let chap = document.querySelector('.fa-backward');
+let full = document.querySelector('.fa-expand');
+let minute = document.querySelector('.minut');
+let second = document.querySelector('.second');
+let valume = document.querySelector('.fa-volume-high');
+let xvalume = document.querySelector('.fa-volume-xmark');
+let progressBar = document.getElementById("progressBar");
+let currentTimeDisplay = document.getElementById("currentTime");
+let durationDisplay = document.getElementById("duration");
+let isDragging = false;
 play.addEventListener('click', function() {
     video.play()
     play.style.display = 'none'
@@ -287,6 +290,20 @@ pause.addEventListener('click', function() {
     play.style.display = 'block'
     pause.style.display = 'none'
 })
+
+video.addEventListener('click', function() {
+    if (video.paused) {
+        video.play()
+        play.style.display = 'none'
+        pause.style.display = 'block'
+    } else {
+        video.pause()
+        play.style.display = 'block'
+        pause.style.display = 'none'
+    }
+});
+
+
 
 ong.addEventListener('dblclick', function() {
     video.currentTime += 5
@@ -316,4 +333,34 @@ document.body.addEventListener('keydown', function(event) {
 })
 video.addEventListener('dblclick', ()=> {
     video.requestFullscreen();
+})
+
+function formatTime(seconds) {
+    let min = Math.floor(seconds / 60);
+    let sec = Math.floor(seconds % 60)
+    return (min < 10 ? "0" : "") + min + ":" + (sec < 10 ? "0" : "") + sec;
+};
+
+
+video.addEventListener('loadedmetadata', () => {
+    progressBar.max = video.duration;
+    durationDisplay.textContent = formatTime(video.duration);
+});
+
+video.addEventListener('timeupdate', function() {
+    if (!isDragging) {
+        progressBar.value = video.currentTime;
+        currentTimeDisplay.textContent = formatTime(video.currentTime);
+    }
+})
+
+progressBar.addEventListener('mousedown', function() {
+    isDragging = true;
+})
+progressBar.addEventListener('input',function() {
+    currentTimeDisplay.textContent = formatTime(progressBar.value);
+})
+progressBar.addEventListener('mouseup', function() {
+    isDragging = false;
+    video.currentTime = progressBar.value;
 })
