@@ -5,9 +5,16 @@
 
 
 // let user = {ism: 'omatbek', yosh: 20};
-// localStorage.setItem('user', JSON.stringify(user))
+// localStorage.setItem('user', JSON.stringify(user))    
 
  // Sayt yuklanganda saqlangan ismini chiqarish
+
+
+
+
+
+
+
 //  window.onload = function() {
 //     let savedName = localStorage.getItem("name");
 //     if (savedName) {
@@ -20,10 +27,33 @@
 //     let name = document.getElementById("nameInput").value;
 //     localStorage.setItem("name", name);
 //     document.getElementById("savedName").innerText = name;
-// }
+// };
 
 // // Ismni o'chirish
 // function clearName() {
 //     localStorage.removeItem("name");
 //     document.getElementById("savedName").innerText = "";
-// }
+// };
+let save = document.getElementById("save");
+let delet = document.getElementById("delet");
+window.onload = function() {
+    let savedName = localStorage.getItem("name");
+    if (savedName) {
+        document.getElementById("SavedItem").innerText = savedName;
+    }
+};
+
+save.addEventListener('click',()=> {
+    let name = document.getElementById('inputValu').value;
+    localStorage.setItem('name', name);
+    document.getElementById('SavedItem').innerText = name;
+})
+
+
+delet.addEventListener('click', ()=> {
+    localStorage.removeItem('name');
+    document.getElementById('SavedItem').innerText = "";
+    document.getElementById('inputValu').value = "";
+})
+
+
