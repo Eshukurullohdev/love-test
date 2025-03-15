@@ -34,26 +34,32 @@
 //     localStorage.removeItem("name");
 //     document.getElementById("savedName").innerText = "";
 // };
-let save = document.getElementById("save");
-let delet = document.getElementById("delet");
-window.onload = function() {
-    let savedName = localStorage.getItem("name");
-    if (savedName) {
-        document.getElementById("SavedItem").innerText = savedName;
-    }
-};
+// let save = document.getElementById("save");
+// let delet = document.getElementById("delet");
+// window.onload = function() {
+//     let savedName = localStorage.getItem("name");
+//     if (savedName) {
+//         document.getElementById("SavedItem").innerText = savedName;
+//     }
+// };
 
-save.addEventListener('click',()=> {
-    let name = document.getElementById('inputValu').value;
-    localStorage.setItem('name', name);
-    document.getElementById('SavedItem').innerText = name;
+// save.addEventListener('click',()=> {
+//     let name = document.getElementById('inputValu').value;
+//     localStorage.setItem('name', name);
+//     document.getElementById('SavedItem').innerText = name;
+// })
+
+
+// delet.addEventListener('click', ()=> {
+//     localStorage.removeItem('name');
+//     document.getElementById('SavedItem').innerText = "";
+//     document.getElementById('inputValu').value = "";
+// })
+
+
+let oy = document.querySelector('.fa-moon')
+
+oy.addEventListener('click', () =>  {
+    document.body.classList.toggle('active')
+    oy.style.color = 'black'
 })
-
-
-delet.addEventListener('click', ()=> {
-    localStorage.removeItem('name');
-    document.getElementById('SavedItem').innerText = "";
-    document.getElementById('inputValu').value = "";
-})
-
-
