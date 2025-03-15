@@ -55,11 +55,57 @@
 //     document.getElementById('SavedItem').innerText = "";
 //     document.getElementById('inputValu').value = "";
 // })
+// let x = localStorage.setItem('name', 'salim')
+// let y = localStorage.getItem('name')
 
 
-let oy = document.querySelector('.fa-moon')
+let save = document.getElementById('save');
+let del = document.getElementById('del');
+let Input =  document.getElementById('Input')
 
-oy.addEventListener('click', () =>  {
-    document.body.classList.toggle('active')
-    oy.style.color = 'black'
+
+
+// save.addEventListener('click', function() {
+//     localStorage.setItem('name', 'John');
+// });
+// del.addEventListener('click', function() {
+//     localStorage.removeItem('name')
+// })
+
+save.addEventListener('click', function() {
+    localStorage.setItem('name', Input.value);
+    let saved = localStorage.getItem('name')
+    if (saved) {
+        document.getElementById('Value').innerText = saved
+    } else {
+        info.innerText = "Siz hali biror narsa saqlamadingiz"
+    }
+    Input.value = ""
 })
+del.addEventListener('click', function() {
+    localStorage.removeItem('name')
+    document.getElementById('Value').innerText = ""
+    Input.value = ""
+})
+document.body.addEventListener('keydown', function(event) {
+    if (event.key == 'Enter') {
+        localStorage.setItem('name', Input.value);
+        let saved = localStorage.getItem('name')
+        if (saved) {
+            document.getElementById('Value').innerText = saved
+        } else {
+            info.innerText = "Siz hali biror narsa saqlamadingiz"
+        }
+        Input.value = ""
+    }
+})
+document.body.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+         localStorage.removeItem('name')
+         document.getElementById('Value').innerText = ""
+        Input.value = ""
+    }
+})
+
+
+
