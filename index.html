@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
         font-family: sans-serif;
         height: 100vh;
     }
+
     #save {
         background-color: green;
         padding: 10px 15px;
@@ -21,6 +23,7 @@
         border: none;
         color: white;
     }
+
     #del {
         background-color: red;
         padding: 10px 15px;
@@ -28,28 +31,33 @@
         border-radius: 5px;
         color: white;
     }
+
     h2 {
         color: aqua;
         font-size: 26px;
     }
+
     input {
         padding: 10px;
         outline: none;
         border-radius: 5px;
-        font-size: 18px;    
+        font-size: 18px;
         margin-top: 10px;
     }
-#Value {
-    font-size: 22px;
-    color: green;
-}
+
+    #Value {
+        font-size: 22px;
+        color: green;
+    }
 </style>
+
 <body>
     <label>Please enter you information</label> <br>
     <input type="text" placeholder="Malumot kiriting" id="Input">
-    <h2>Malumot: <span  id="Value"></span></h2>
-    <button id="save" type="submit">Saqlash</button>
+    <h2>Malumot: <span id="Value"></span></h2>
+    <button id="save">Saqlash</button>
     <button id="del">O'chirish</button>
     <script src="/js.js"></script>
 </body>
+
 </html>

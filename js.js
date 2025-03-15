@@ -63,22 +63,11 @@ let save = document.getElementById('save');
 let del = document.getElementById('del');
 let Input =  document.getElementById('Input')
 
-
-
-// save.addEventListener('click', function() {
-//     localStorage.setItem('name', 'John');
-// });
-// del.addEventListener('click', function() {
-//     localStorage.removeItem('name')
-// })
-
 save.addEventListener('click', function() {
     localStorage.setItem('name', Input.value);
     let saved = localStorage.getItem('name')
     if (saved) {
         document.getElementById('Value').innerText = saved
-    } else {
-        info.innerText = "Siz hali biror narsa saqlamadingiz"
     }
     Input.value = ""
 })
@@ -93,8 +82,6 @@ document.body.addEventListener('keydown', function(event) {
         let saved = localStorage.getItem('name')
         if (saved) {
             document.getElementById('Value').innerText = saved
-        } else {
-            info.innerText = "Siz hali biror narsa saqlamadingiz"
         }
         Input.value = ""
     }
