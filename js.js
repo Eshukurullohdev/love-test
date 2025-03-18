@@ -67,32 +67,32 @@ save.addEventListener('click', function() {
     localStorage.setItem('name', Input.value);
     let saved = localStorage.getItem('name')
     if (saved) {
-        document.getElementById('Value').innerText = saved
+        let x = document.getElementById('Value').innerHTML = saved;
     }
     Input.value = ""
 })
 del.addEventListener('click', function() {
     localStorage.removeItem('name')
-    document.getElementById('Value').innerText = ""
+    document.getElementById('Value').innerText = "";
     Input.value = ""
 })
 document.body.addEventListener('keydown', function(event) {
     if (event.key == 'Enter') {
         localStorage.setItem('name', Input.value);
-        let saved = localStorage.getItem('name')
+        let saved = localStorage.getItem('name');
         if (saved) {
-            document.getElementById('Value').innerText = saved
+            document.getElementById('Value').innerText = saved;
         }
         Input.value = ""
-    }
-})
+    };
+});
 document.body.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
-         localStorage.removeItem('name')
-         document.getElementById('Value').innerText = ""
-        Input.value = ""
-    }
-})
+         localStorage.removeItem('name');
+         document.getElementById('Value').innerText = "";
+        Input.value = "";
+    };
+});
 
 
 
