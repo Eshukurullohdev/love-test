@@ -135,30 +135,52 @@
 //     requestAnimationFrame(draw)
 // }
 
-let canvas = document.getElementById("ballCanvas");
-let ctx = canvas.getContext("2d");
+// let canvas = document.getElementById("ballCanvas");
+// let ctx = canvas.getContext("2d");
 
-let x = 50, y = 50, dx = 3, dy = 3, radius = 20;
+// let x = 50, y = 50, dx = 3, dy = 3, radius = 20;
 
-function drawBall() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height); // Oldingi tasvirni o‘chirish
+// function drawBall() {
+//   ctx.clearRect(0, 0, canvas.width, canvas.height); // Oldingi tasvirni o‘chirish
 
-  ctx.beginPath();
-  ctx.arc(x, y, radius, 0, Math.PI * 2);
-  ctx.fillStyle = "red";
-  ctx.fill();
+//   ctx.beginPath();
+//   ctx.arc(x, y, radius, 0, Math.PI * 2);
+//   ctx.fillStyle = "red";
+//   ctx.fill();
 
-  x += dx;
-  y += dy;
+//   x += dx;
+//   y += dy;
 
-  if (x + radius > canvas.width || x - radius < 0) {
-    dx = -dx;
+//   if (x + radius > canvas.width || x - radius < 0) {
+//     dx = -dx;
+//   }
+//   if (y + radius > canvas.height || y - radius < 0) {
+//     dy = -dy;
+//   }
+
+//   requestAnimationFrame(drawBall);
+// }
+
+// drawBall(); // Animatsiyani boshlash
+
+// OOP - Very important --lesson.
+
+
+class Avtomobil {
+  constructor(nomi, tezligi) {
+    this.nomi = nomi;
+    this.tezligi = tezligi;
   }
-  if (y + radius > canvas.height || y - radius < 0) {
-    dy = -dy;
+  tezlashtirish() {
+    this.tezligi += 10;
+    console.log(`${this.nomi} tezligi ${this.tezligi} km/h ga oshirildi`);
   }
+  sekinlashtirish() {
+    this.tezligi -= 20;
+    console.log(`${this.nomi} tezligi ${this.tezligi} km/h`);
+  }
+};
 
-  requestAnimationFrame(drawBall);
-}
-
-drawBall(); // Animatsiyani boshlash
+const bmw = new Avtomobil('BMW', 362);
+bmw.tezlashtirish();
+bmw.sekinlashtirish();
