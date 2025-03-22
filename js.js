@@ -170,17 +170,27 @@ class Avtomobil {
   constructor(nomi, tezligi) {
     this.nomi = nomi;
     this.tezligi = tezligi;
-  }
+  };
+
   tezlashtirish() {
     this.tezligi += 10;
     console.log(`${this.nomi} tezligi ${this.tezligi} km/h ga oshirildi`);
-  }
+  };
   sekinlashtirish() {
     this.tezligi -= 20;
     console.log(`${this.nomi} tezligi ${this.tezligi} km/h`);
-  }
+  };
 };
-
 const bmw = new Avtomobil('BMW', 362);
 bmw.tezlashtirish();
 bmw.sekinlashtirish();
+
+
+class Telefon {
+  constructor(brand, nom) {
+    this.brand = brand;
+    this.nom = nom;
+  };
+};
+const telefon = new Telefon('Iphone', '13');
+console.log(telefon);
